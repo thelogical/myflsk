@@ -16,4 +16,4 @@ jobs: # A basic unit of work in a run
             pipenv install
       - run:
           command: |
-            pipenv run python app.py
+            pipenv run python test.py
