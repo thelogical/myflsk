@@ -1,4 +1,4 @@
-FROM python:3.7l
+FROM python:3.7
 COPY app.py requirements.txt /app
 WORKDIR /app
 RUN pip3 install -r requirements.txt
