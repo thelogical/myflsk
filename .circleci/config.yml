@@ -7,24 +7,23 @@ jobs: # A basic unit of work in a run
     steps:
       - checkout
       - run:
+          name: Install Docker client and pip
+          command: |
+            apk update
+            apk add py-pip
+            apk add docker-cli
+      - run:
           name: Setup VirtualEnv
           command: |
-            virtualenv helloworld
-            . helloworld/bin/activate
             pip install --no-cache-dir -r requirements.txt
       - run:
           name: Run Tests
           command: |
             . helloworld/bin/activate
-            python test.py
-      - run:
-          name: Install Docker client
-          command: |
-            apk add docker-cli 
+            python test.py 
       - run:
           name: Build and push Docker image
           command: |
-            . helloworld/bin/activate
             docker build -t sw9719/circleciflask:latest .
             echo "Mepro@mw3" | docker login -u sw9719 --password-stdin
             docker push sw9719/circleciflask:latest
