@@ -14,7 +14,7 @@ jobs: # A basic unit of work in a run
             apk add py-pip
             apk add docker
             apk add docker-cli
-            apk add openrc --no-cache
+            service docker restart
       - run:
           name: Setup VirtualEnv
           command: |
