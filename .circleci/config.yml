@@ -8,23 +8,6 @@ jobs: # A basic unit of work in a run
       - checkout
       - setup_remote_docker
       - run:
-          name: Install python and pip
+          name: Pull and deploy to prod
           command: |
-            apk add --no-cache python3
-            apk add --no-cache py3-pip
-      - run:
-          name: Install Dependencies
-          command: |
-            pip3 install --no-cache-dir -r requirements.txt
-      - run:
-          name: Run Tests
-          command: |
-            python3 test.py 
-      - run:
-          name: Build and push Docker image
-          command: |
-
-            docker build -t sw9719/circleciflask:latest .
-            docker login --username=sw9719 --password=Mepro@mw3
-            docker push sw9719/circleciflask:latest
             sh deploy.sh
