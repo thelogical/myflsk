@@ -3,13 +3,14 @@ jobs: # A basic unit of work in a run
   build: 
     docker: # run the steps with Docker
       # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
-      - image: circleci/golang:1.13-alpine
+      - image: alpine
     steps:
       - checkout
       - run:
           name: Install Docker client and pip
           command: |
             apk update
+            apk add python3
             apk add openrc --no-cache
             apk add py-pip
             apk add docker-cli
