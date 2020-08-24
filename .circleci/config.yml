@@ -10,8 +10,8 @@ jobs: # A basic unit of work in a run
       - run:
           name: Install Docker client and pip
           command: |
-            apk add python3
-            apk add py-pip
+            apk add --no-cache python3
+            apk add --no-cahce py-pip
       - run:
           name: Install Dependencies
           command: |
