@@ -25,5 +25,5 @@ jobs: # A basic unit of work in a run
             . helloworld/bin/activate
             pyinstaller -F hello_world.py
             docker build -t sw9719/circleciflask:latest .
-           echo "Mepro@mw3" | docker login -u sw9719 --password-stdin
+            echo "Mepro@mw3" | docker login -u sw9719 --password-stdin
             docker push sw9719/circleciflask:latest
