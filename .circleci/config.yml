@@ -19,7 +19,6 @@ jobs: # A basic unit of work in a run
       - run:
           name: Run Tests
           command: |
-            . helloworld/bin/activate
             python test.py 
       - run:
           name: Build and push Docker image
