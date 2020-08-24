@@ -21,7 +21,7 @@ jobs: # A basic unit of work in a run
       - run:
           name: Run Tests
           command: |
-            python test.py 
+            python3 test.py 
       - run:
           name: Build and push Docker image
           command: |
