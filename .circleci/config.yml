@@ -20,7 +20,7 @@ jobs: # A basic unit of work in a run
             python test.py
       - run:
           name: Install Docker client
-          command: apt install docker-cli
+          command: sudo apt install docker-cli
       - run:
           name: Build and push Docker image
           command: |
