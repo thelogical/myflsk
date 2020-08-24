@@ -3,7 +3,7 @@ jobs: # A basic unit of work in a run
   build: 
     docker: # run the steps with Docker
       # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
-      - image: 3.7.9-alpine3.11
+      - image: python:3.7.9-alpine3.11
     steps:
       - checkout
       - run:
