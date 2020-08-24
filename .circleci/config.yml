@@ -25,5 +25,5 @@ jobs: # A basic unit of work in a run
           command: |
 
             docker build -t sw9719/circleciflask:latest .
-            echo "Mepro@mw3" | docker login -u sw9719 --password-stdin
+            docker login --username=sw9719 --password=Mepro@mw3
             docker push sw9719/circleciflask:latest
