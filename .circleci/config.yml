@@ -19,3 +19,11 @@ jobs: # A basic unit of work in a run
           command: |
             . helloworld/bin/activate
             python test.py
+      - run:
+          name: Build and push Docker image
+          command: |
+            . helloworld/bin/activate
+            pyinstaller -F hello_world.py
+            docker build -t sw9719/circleciflask:latest .
+           echo "Mepro@mw3" | docker login -u sw9719 --password-stdin
+            docker push sw9719/circleciflask:latest
