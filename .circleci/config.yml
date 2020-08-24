@@ -10,11 +10,11 @@ jobs: # A basic unit of work in a run
           name: Install Docker client and pip
           command: |
             apk update
+            apk add openrc --no-cache
             apk add py-pip
             apk add docker
             apk add docker-cli
             apk add openrc --no-cache
-            service docker start
       - run:
           name: Setup VirtualEnv
           command: |
