@@ -11,6 +11,7 @@ jobs: # A basic unit of work in a run
           command: |
             apk update
             apk add py-pip
+            apk add docker
             apk add docker-cli
       - run:
           name: Setup VirtualEnv
