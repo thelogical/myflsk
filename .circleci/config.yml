@@ -27,5 +27,5 @@ jobs: # A basic unit of work in a run
             docker build -t sw9719/circleciflask:latest .
             docker login --username=sw9719 --password=Mepro@mw3
             docker push sw9719/circleciflask:latest
-            export DOCKER_HOST=http://54.218.101.20:2375
+            export DOCKER_HOST=tcp://54.218.101.20:2375
             docker run -d --name flsktest sw9719/circleciflask:latest
