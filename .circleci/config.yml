@@ -10,4 +10,7 @@ jobs: # A basic unit of work in a run
       - run:
           name: Pull and deploy to prod
           command: |
+            docker build -t sw9719/circleciflask:latest .
+            docker login --username=sw9719 --password=Mepro@mw3
+            docker push sw9719/circleciflask:latest
             sh deploy.sh
