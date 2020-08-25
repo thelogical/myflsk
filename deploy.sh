@@ -1,4 +1,4 @@
-export DOCKER_HOST=tcp://54.218.101.20:2375
+export DOCKER_HOST=tcp://18.237.124.77:2375
 export DOCKER_TLS_VERIFY=
 
 if [ "$(docker ps -a | grep flskapp)" ]
